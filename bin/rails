@@ -1,2 +1,4 @@
-devise:
-  jwt_secret_key: 8c4991f76b7ab40b9f3f30cea997e90201349f0a168766c85d0cd395c93ebb89856719365d19c3665bf18bc2b78baaf5fa57965c58f2cd04f4451b3beea9a991
+#!/usr/bin/env ruby.exe
+APP_PATH = File.expand_path("../config/application", __dir__)
+require_relative "../config/boot"
+require "rails/commands"
