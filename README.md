@@ -1,24 +1,13 @@
-# README
+# Backend Rails 7.2 with Devise JWT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+1. Instale Ruby e Rails (versão 7.2)
+2. Instale PostgreSQL e crie usuário e senha
+3. Configure `config/database.yml` com seu usuário e senha do PostgreSQL
+4. Rode:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bundle install
+bundle exec rails db:create db:migrate
+bundle exec rails s
