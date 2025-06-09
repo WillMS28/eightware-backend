@@ -36,4 +36,22 @@ RSpec.describe "Auth", type: :request do
       expect(json['email']).to eq("test@example.com")
     end
   end
+
+  describe "GET /me" do
+    let(:user) { User.create!(email: "me@example.com", password: "password", password_confirmation: "password") }
+    let(:token) { Warden::JWTAuth::UserEncoder.new.call(user, :user, nil).first }
+
+    it "returns the current user when authenticated" do
+      get "/me", headers: { 'Authorization' => "Bearer #{token}" }
+
+      expect(response).to have_http_status(:ok)
+      json = JSON.parse(response.body)
+      expect(json['email']).to eq(user.email)
+    end
+
+    it "returns unauthorized when no token is provided" do
+      get "/me"
+      expect(response).to have_http_status(:unauthorized)
+    end
+  end
 end
