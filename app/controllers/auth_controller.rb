@@ -25,7 +25,7 @@ class AuthController < ApplicationController
   end
 
   def me
-    render json: current_user
+    render json: { email: current_user.email }, status: :ok
   end
 
   private
