@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+gem 'rack-cors'
+
 # Auth
 gem 'devise'
 gem 'devise-jwt'
