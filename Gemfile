@@ -7,7 +7,7 @@ gem 'devise'
 gem 'devise-jwt'
 
 # Core
-gem "rails", "~> 7.2.0"
+gem "rails", "~> 8.1.1"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 
